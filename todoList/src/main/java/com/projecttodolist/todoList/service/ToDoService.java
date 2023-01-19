@@ -50,6 +50,14 @@ public class ToDoService {
 		
 		return toDoRepository.save(item);		
 	}
+	
+	public ToDoItem updateItem(ToDoItem item) {
+		item.setText(item.getText());
+		item.setIsComplete(item.getIsComplete());
+		item.setCreatedAt(item.getCreatedAt());
+		
+		return toDoRepository.save(item);
+	}
 
 	public void deleteById(int id) {
 		ToDoItem itemid = toDoRepository.findById(id);
